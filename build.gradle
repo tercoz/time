@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'ru.world'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
@@ -28,3 +28,14 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootJar {
+	archiveFileName = "app.jar"
+}
+
+tasks.register('buildDockerSources', Copy) {
+	from("${buildDir}/libs/app.jar")
+	into("docker/")
+}
+
+build.finalizedBy(buildDockerSources)
