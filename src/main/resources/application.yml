@@ -3,6 +3,7 @@ spring:
     name: time
 
 logging:
+  config: classpath:logback.xml
   level:
-    ROOT: info
-    ru.world: debug
+    ROOT: INFO
+    ru.world: DEBUG
