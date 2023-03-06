@@ -10,5 +10,8 @@
 2. To point your shell to minikube's docker-daemon, run: `eval $(minikube -p minikube docker-env)`
 3. Create docker image of application right in the terminal window where steps 1 and 2 were performed `docker build -t tercoz/time .
    `
-4. Set the imagePullPolicy to Never, otherwise Kubernetes will try to download the image then `kubectl create deployment time --image=tercoz/time:latest`
-5. `kubectl expose deployment time --type="NodePort" --port 8080`
+4. Edit deployment by setting the imagePullPolicy to Never, otherwise kubernetes will try to download the image then `kubectl create deployment time --image=tercoz/time:latest`
+5. Make it available ouside cluster `kubectl expose deployment time --type="NodePort" --port 8080`
+6. Get ip `minikube ip`
+7. Get port `kubectl get services -n time`
+8. Make a http request `curl http://ip:port/time`
