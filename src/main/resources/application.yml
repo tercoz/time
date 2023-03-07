@@ -1,6 +1,8 @@
 spring:
   application:
     name: time
+  profiles:
+    active: develop
 
 logging:
   config: classpath:logback.xml

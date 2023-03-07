@@ -9,24 +9,18 @@ data:
       application:
         name: time
       profiles:
-        active: develop
+        active: prod
     
     logging:
+      config: logback.xml
       level:
-        ROOT: ERROR
-        ru.world: INFO
-
+        ROOT: INFO
+        ru.world: DEBUG
   logback-xml: |
     <?xml version="1.0" encoding="UTF-8"?>
-    <configuration debug="true">
-
+    <configuration>
         <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-            <encoder>
-                <pattern>%d</pattern
-            </encoder>
-        </appender
-
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
         </root>

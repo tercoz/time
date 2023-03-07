@@ -29,8 +29,11 @@ spec:
         volumeMounts:
         - name: application-yml-volume
           mountPath: /srv/application.yml
+          subPath: application.yml
+          readOnly: true
         - name: logback-xml-volume
           mountPath: /srv/logback.xml
+          subPath: logback.xml
         imagePullPolicy: Never
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
