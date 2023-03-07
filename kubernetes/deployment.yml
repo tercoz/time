@@ -27,15 +27,26 @@ spec:
       - name: time
         image: tercoz/time
         volumeMounts:
-        - name: spring-boot-application-yaml
-          mountPath: /srv/application.xml
+        - name: application-yml-volume
+          mountPath: /srv/application.yml
+        - name: logback-xml-volume
+          mountPath: /srv/logback.xml
         imagePullPolicy: Never
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       volumes:
-      - name: spring-boot-application-yaml
+      - name: application-yml-volume
         configMap:
           name: time
+          items:
+            - key: application-yml
+              path: application.yml
+      - name: logback-xml-volume
+        configMap:
+          name: time
+          items:
+            - key: logback-xml
+              path: logback.xml
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler

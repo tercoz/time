@@ -4,12 +4,30 @@ metadata:
   name: time
   namespace: time
 data:
-  application.yml: |
+  application-yml: |
     spring:
       application:
         name: time
+      profiles:
+        active: develop
     
     logging:
       level:
-        ROOT: DEBUG
+        ROOT: ERROR
         ru.world: INFO
+
+  logback-xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration debug="true">
+
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d</pattern
+            </encoder>
+        </appender
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </configuration>
