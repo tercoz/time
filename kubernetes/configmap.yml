@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: time
+  namespace: time
+data:
+  application.yml: |
+    spring:
+      application:
+        name: time
+    
+    logging:
+      level:
+        ROOT: DEBUG
+        ru.world: INFO
