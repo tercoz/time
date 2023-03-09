@@ -15,10 +15,10 @@
 4. Check if it works `docker run -d -p 8080:8080 tercoz/time` then `curl $(minikube ip):8080/time`
 5. Try to create deployment `kubectl create deployment time --image=tercoz/time:latest`
 6. Edit deployment `kubectl edit deployment time` by setting the imagePullPolicy to Never, otherwise kubernetes will try to download the image then follow step (5) again
-6. Make it available outside cluster `kubectl expose deployment time --type="NodePort" --port 8080`
-7. Get ip `minikube ip`
-8. Get port `kubectl get services -n time`
-9. Make a http request `curl http://ip:port/time`
+7. Make it available outside cluster `kubectl expose deployment time --type="NodePort" --port 8080`
+8. Get ip `minikube ip`
+9. Get port `kubectl get services -n time`
+10. Make a http request `curl http://ip:port/time`
 
 You can also just run from project root `kubectl apply -d kubernetes` a couple of times to apply all files in the folder.
 
