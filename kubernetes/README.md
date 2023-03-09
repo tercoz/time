@@ -1,5 +1,7 @@
 # Application deployment on kubernetes
 
+## Install kubectl, minikube: https://kubernetes.io/docs/tasks/tools/
+
 ## Create minikube cluster
 1. Start using minikube: https://minikube.sigs.k8s.io/docs/start/
 2. minikube delete
