@@ -1,8 +1,9 @@
 # Application deployment on kubernetes
 
 ## Create minikube cluster
-1. minikube delete
-2. minikube start --vm-driver=virtualbox
+1. Start using minikube: https://minikube.sigs.k8s.io/docs/start/
+2. minikube delete
+3. minikube start --vm-driver=virtualbox
 
 ## Deploy application from local image
 > Execute commands in the same terminal window
@@ -16,5 +17,7 @@
 8. Get port `kubectl get services -n time`
 9. Make a http request `curl http://ip:port/time`
 
-Set kubernetes namespace
+You can also just run from project root `kubectl apply -d kubernetes` a couple of times to apply all files in the folder.
+
+To make it comfortable working with kubernetes when using namespaces set the working namespace:
 `kubectl config set-context --current --namespace=<insert-namespace-name-here>`
