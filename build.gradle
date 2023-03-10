@@ -35,7 +35,7 @@ bootJar {
 
 tasks.register('buildDockerSources', Copy) {
 	from("${buildDir}/libs/app.jar")
-	into("docker/")
+	into("devops/docker/")
 }
 
 build.finalizedBy(buildDockerSources)

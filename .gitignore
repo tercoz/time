@@ -10,4 +10,4 @@ build/
 *.iml
 *.ipr
 out/
-/docker/app.jar
+/devops/docker/app.jar
