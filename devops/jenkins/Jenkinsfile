@@ -4,6 +4,9 @@ pipeline {
             image 'gradle:7.6.1'
         }
     }
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') {
             steps {
