@@ -1,2 +1,2 @@
 # time
-REST-service that addresses operartions with date and time
+REST-service that addresses operations with date and time

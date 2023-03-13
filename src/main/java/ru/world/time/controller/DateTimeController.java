@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 
 import static java.time.format.DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
  * Manages requests for timestamp.
  */
 @RestController()
-public class TimeController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TimeController.class);
+public class DateTimeController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DateTimeController.class);
 
     /**
      * Gets timestamp in ISO_LOCAL_DATE_TIME format.
      */
-    @GetMapping(value = "/time", produces = APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/time", produces = APPLICATION_JSON_VALUE)
     Response getTimestamp() {
         LOGGER.info("Got request on /time endpoint");
         return Response.of(LocalDateTime.now().format(ISO_LOCAL_DATE_TIME));
